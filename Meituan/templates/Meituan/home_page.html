@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Kool Karen Meituan</title>
+</head>
+<body>
+ <!-- Site Header -->
+ <h1>Kool Karen Meituan</h1>
+  <p>Your convenience is our duty</p>
+
+<!-- Blog Post -->
+ <h2>Here are all our items!</h2>
+
+ <!--Item 1-->
+
+ <p>Water: 12RMB</p>
+ <img src="https://content.etilize.com/Out-of-Package/1027090117.jpg">
+
+ <br>
+ <!--item 2-->
+ <p>Cherry Cake: 28RMB</p>
+ <img src="https://www.sweetandsavorybyshinee.com/wp-content/uploads/2017/08/3-Ingredient-Chocolate-Cherry-Sheet-Cake-2.jpg">
+ <!--item 3 -->
+ <p>Hot dog: 35RMB</p>
+<img src="http://mobile-cuisine.com/wp-content/uploads/2012/09/hot-dog-fun-facts.jpg">
+
+<!--Order Form-->
+<h2>Place your Order</h2>
+<form action="{% url 'Meituan:home_page' %}" method="POST">
+ {% csrf_token %}
+ <input type="order" placeholder="Please Type Which Item You Want" name="order"><br><br>
+ <textarea name="address" placeholder="Please Type Your Address"></textarea><br>
+ <input type="submit" value="Place Your Order!">
+ </form>
+
+<!--Show Order-->
+<h1>Your order</h1>
+<p>Item Ordered:{{item}}</p>
+<p>Delivery Address:{{address}}</p>
+
+</body>
+</html>
